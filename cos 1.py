@@ -1,29 +1,35 @@
-cart = {}  # Initialize an empty dictionary to store items and prices
 
-while True:
-    item = input("Enter item name (or type 'done' to finish): ")
-    if item.lower() == 'done':
-        break
+def add(x,y):
+    return(x+y)
+def subtract(x,y):
+    return(x-y)
+def  multiply(x,y):
+    return(x*y)
+def divide(x,y):
+    if y==0:
+        return "canntot divide by zero"
+    else:
+        return (x/y)
+print("select youu wat to opretion choice:")
+print("1.addition:")
+print("2.subtrect:")
+print("3.multiplycation:")
+def nw():
+    print("4.divide")
+     
+    choice=input("enter your choice in [1,2,3,4] :")
+    return choice
+chiice=nw()
+num1=float(input("enter fist number:"))
+num2=float("enter second number:")
 
-    while True:  # Inner loop for price input with validation
-        try:
-            price = float(input("Enter price for " + item + ": "))
-            if price <= 0:
-                print("Price must be greater than zero. Please try again.")
-            else:
-                break  # Exit inner loop if price is valid
-        except ValueError:
-            print("Invalid input. Please enter a number for the price.")
-
-    cart[item] = price  # Add item and price to the cart dictionary
-
-print("\n--- Shopping Cart ---")
-if not cart:  # Check if the cart is empty
-    print("Your cart is empty.")
+if chiice=="1":
+    print("result:",add(num1 ,num2))
+elif chiice=="2":
+    print("result:",subtract(num1,num2))
+elif chiice=="3":
+    print("result:",multiply(num1,num2))
+elif chiice=="4":
+    print("result:",divide(num1,num2))
 else:
-    total = 0
-    for item, price in cart.items():  # Iterate through the cart items
-        print(f"{item}: ${price:.2f}")  # formatted to two decimal places
-        total += price
-    print(f"--------------------")
-    print(f"Total: ${total:.2f}")
+    print("invalid input:")
